@@ -1,0 +1,162 @@
+/* MAIN STYLESHEET for Iman's thesis */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #547980;
+  font-family: Verdana, Arial, sans-serif;
+  color: #fff;
+}
+
+main {
+  width: 100%;
+  display: flex;
+}
+
+.center {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+  .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+    .login > * {
+      margin-bottom: 0.25em;
+    }
+
+    .login > select {
+      border: none;
+      font-size: 1.15em;
+    }
+
+    .login > label {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .login > input[type="submit"] {
+      margin-top: 10px;
+      padding: 5px 25px;
+      background-color: #43aca7;
+      border: none transparent;
+      color: #fff;
+      font-size: 1.25em;
+    }
+
+    .login > input[type="submit"]:active {
+      background-color: #a2d4aa;
+      color: #1a1a1a;
+    }
+
+/* TEMP STYLES */
+.placeholder {
+  background-color: #fff;
+}
+
+  .placeholder.square.big {
+    width: 5em;
+    height: 5em;
+  }
+
+  .placeholder.square.mid {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .placeholder.square.small {
+    width: 1em;
+    height: 1em;
+  }
+
+  .placeholder.rectangle {
+    background-color: blue;
+  }
+
+  .placeholder.rectangle.mid {
+    width: 20em;
+    height: 17em;
+  }
+
+  .placeholder.rectangle.big {
+    width: 25em;
+    height: 20em;
+  }
+
+/* GUIDANCE DASHBOARD STYLES */
+header {
+  width: 100%;
+  padding: 1em 5em;
+  background-color: #594f4f;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+  .counselor-info img,
+  .counselor-info .placeholder { /* should be img */
+    float: left;
+  }
+
+  .counselor-info .counselor-name {
+    margin-left: 5em;
+  }
+
+  nav .navbar {
+    list-style-type: none;
+    display: flex;
+    align-content: flex-end;
+    align-items: center;
+  }
+
+  nav .navbar .navbar-item {
+    margin: 0 0.5em;
+    padding: 1em;
+    overflow: hidden;
+  }
+
+    nav .navbar .navbar-item.active {
+      margin-bottom: -3em;
+      background-color: #a2d4aa;
+      border-bottom: 3em solid #a2d4aa;
+    }
+
+main {
+  margin-top: 2em;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+  .calendars, .articles {
+    background-color: #a2d4aa;
+    display: flex;
+    flex-direction: column;
+  }
+
+    .calendars > * {
+      margin: 1em;
+    }
+
+  article {
+    width: 50%;
+    height: 50%;
+  }
+
+  .article-image {
+    width: 100%;
+  }
+
+  #featured {
+    flex-grow: 2;
+  }
+
+
