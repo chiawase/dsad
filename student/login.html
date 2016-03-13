@@ -14,18 +14,20 @@
       <p>This is your first time logging in. Please enter the following, then procees to take the assessment test.</p>
 
       <form id="student-test" method="post">
-        <label for="name">Name</label>
-        <input type="text" id="name" form="student-test" required>
+        <div class="top">
+          <label for="name">Name</label>
+          <input type="text" id="name" form="student-test" required>
+        </div>
         <div class="column">
           <label for="year-course">Year and Course</label>
-          <input type="text" id="year-course" form="student-test" required>
+          <input type="text" id="year-course" placeholder="Ex. 4 BFA ID" pattern="[1-5] [A-Za-z- ]{2,}" form="student-test" required>
           
           <label for="email">E-Mail</label>
           <input type="email" id="email" form="student-test" required>
         </div>
         <div class="column">
           <label for="cellno">Cellphone #</label>
-          <input type="number" id="cellno" pattern="09[0-9]{9}" form="student-test" required>
+          <input type="TEXT" id="cellno" placeholder="09XXXXXXXXX" pattern="09[0-9]{9}" form="student-test" required>
 
           <label for="birthday">Date of Birth</label>
           <input type="date" id="birthday" form="student-test" required>
