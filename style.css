@@ -1,0 +1,55 @@
+/* MAIN STYLESHEET for Iman's thesis */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #547980;
+  font-family: Verdana, Arial, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  display: flex;
+}
+
+.center {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+  .toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+    .toggle > * {
+      margin-bottom: 0.25em;
+    }
+
+    .toggle > select {
+      border: none;
+      font-size: 1.15em;
+    }
+
+    .toggle > input[type="submit"] {
+      margin-top: 10px;
+      padding: 5px 25px;
+      background-color: #43aca7;
+      border: none transparent;
+      color: #fff;
+      font-size: 1.25em;
+    }
+
+    .toggle > input[type="submit"]:active {
+      background-color: #a2d4aa;
+      color: #1a1a1a;
+    }

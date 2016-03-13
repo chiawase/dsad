@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Student Login | DSAD</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+  <main class="wrapper center">
+    <div class="login">
+      <h1>Welcome, 123269!</h1>
+      <p>This is your first time logging in. Please enter the following, then procees to take the assessment test.</p>
+
+      <form id="student-test" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" form="student-test" required>
+        <div class="column">
+          <label for="year-course">Year and Course</label>
+          <input type="text" id="year-course" form="student-test" required>
+          
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" form="student-test" required>
+        </div>
+        <div class="column">
+          <label for="cellno">Cellphone #</label>
+          <input type="number" id="cellno" pattern="09[0-9]{9}" form="student-test" required>
+
+          <label for="birthday">Date of Birth</label>
+          <input type="date" id="birthday" form="student-test" required>
+        </div>
+
+        <input type="submit" value="Take the Test" form="student-test" required>
+      </form>
+    </div>
+  </main>
+  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
