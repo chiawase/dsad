@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 /* TEMP STYLES */
 .placeholder {
   background-color: #fff;
@@ -58,7 +63,54 @@ main {
   align-items: center;
   align-content: center;
 }
+  /* FOR INDEX */
+  #main {
+    flex-wrap: wrap;
+  }
 
+  .full {
+    width: 100%;
+  }
+    #main .full {
+      margin-bottom: 7.5em;
+    }
+
+    #main .full > * {
+      margin: 0.5em auto;
+    }
+
+  .half {
+    width: 50%;
+  }
+
+    #main .full,
+    #main .half {
+      padding: 2em;
+      text-align: center;
+    }
+
+  .heading {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .button {
+    margin-top: 1em;
+    padding: 5px 25px;
+    background-color: #43aca7;
+    border: none transparent;
+    color: #fff;
+    font-size: 1.25em;
+  }
+
+    .button:hover {background-color: #a2d4aa;}
+    .button:active {color: #1a1a1a;}
+
+  nav {
+    margin-top: 7.5em;
+  }
+
+  /* FOR LOGIN PAGE */
   .login {
     width: 50%;
     display: flex;
@@ -113,4 +165,3 @@ main {
       #student-test .column > input {
         margin: 5px auto;
       }
-
