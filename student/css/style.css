@@ -11,6 +11,10 @@ a {
   color: #fff;
 }
 
+  a:hover {
+    text-decoration: underline;
+  }
+
 /* TEMP STYLES */
 .placeholder {
   background-color: #fff;
@@ -103,7 +107,7 @@ main {
     font-size: 1.25em;
   }
 
-    .button:hover {background-color: #a2d4aa;}
+    .button:hover {background-color: #a2d4aa;text-decoration: none;}
     .button:active {color: #1a1a1a;}
 
   nav {
@@ -143,7 +147,7 @@ main {
       font-size: 1.25em;
     }
 
-    .login input[type="submit"]:hover {background-color: #a2d4aa;}
+    .login input[type="submit"]:hover {background-color: #a2d4aa;text-decoration: none;}
     .login input[type="submit"]:active {color: #1a1a1a;}
 
   #student-test {
@@ -165,3 +169,14 @@ main {
       #student-test .column > input {
         margin: 5px auto;
       }
+
+  /* FOR ABOUT PAGE */
+  #about {
+    flex-direction: column;
+  }
+
+    #about > * {
+      width: 70%;
+      text-align: center;
+      margin: 0.5em auto;
+    }
