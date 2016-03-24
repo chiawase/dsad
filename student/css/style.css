@@ -63,6 +63,7 @@ main {
 }
 
 .center {
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -83,12 +84,7 @@ main {
       margin: 0.5em auto;
     }
 
-  .half {
-    width: 50%;
-  }
-
-    #main .full,
-    #main .half {
+    #main .full {
       padding: 2em;
       text-align: center;
     }
@@ -96,6 +92,12 @@ main {
   .heading {
     text-align: center;
     margin: 0 auto;
+  }
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
   }
 
   .button {
