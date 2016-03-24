@@ -113,7 +113,8 @@ main {
     .button:active {color: #1a1a1a;}
 
   nav {
-    margin-top: 7.5em;
+    text-align: center;
+    margin: 7.5em auto 0em;
   }
 
   /* FOR LOGIN PAGE */
@@ -140,6 +141,10 @@ main {
       margin: 0 auto;
     }
 
+    .login input[type="date"] {
+      width: 85%;
+    }
+
     .login input[type="submit"] {
       margin-top: 10px;
       padding: 5px 25px;
@@ -154,14 +159,14 @@ main {
 
   #student-test {
     width: 60%;
+    margin: 10px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-    #student-test .top {
+    #student-test .full {
       flex-basis: 100%;
-      margin: 10px auto;
     }
 
     #student-test .column {
