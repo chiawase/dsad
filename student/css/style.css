@@ -152,6 +152,7 @@ main {
       border: none transparent;
       color: #fff;
       font-size: 1.25em;
+      cursor: pointer;
     }
 
     .login input[type="submit"]:hover {background-color: #a2d4aa;text-decoration: none;}
@@ -165,17 +166,9 @@ main {
     justify-content: center;
   }
 
-    #student-test .full {
-      flex-basis: 100%;
-    }
-
-    #student-test .column {
+    #student-test > .labeled-field {
       width: 50%;
     }
-
-      #student-test .column > input {
-        margin: 5px auto;
-      }
 
   /* FOR ABOUT PAGE */
   #about {

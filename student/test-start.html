@@ -14,31 +14,32 @@
       <p>Please enter the following information, then proceed to take the test.</p>
 
       <form id="student-test" method="post">
-        <div class="column">
+        <div class="labeled-field">
           <label for="name">Name</label>
           <input type="text" id="name" form="student-test" required>
-
+        </div>
+        <div class="labeled-field">
+          <label for="id-num">ID Number</label>
+          <input type="text" id="id-num" form="student-test" required>
+        </div>
+        <div class="labeled-field">
           <label for="year-course">Year and Course</label>
           <input type="text" id="year-course" placeholder="Ex. 4 BFA ID" pattern="[1-5] [A-Za-z- ]{2,}" form="student-test" required>
-
-
+        </div>
+        <div class="labeled-field">
+          <label for="cellno">Cellphone #</label>
+          <input type="TEXT" id="cellno" placeholder="09XXXXXXXXX" pattern="09[0-9]{9}" form="student-test" required>
+        </div>  
+        <div class="labeled-field">
           <label for="birthday">Date of Birth</label>
           <input type="date" id="birthday" form="student-test" required>
         </div>
-        <div class="column">
-          <label for="id-num">ID Number</label>
-          <input type="text" id="id-num" form="student-test" required>
-          
-          <label for="cellno">Cellphone #</label>
-          <input type="TEXT" id="cellno" placeholder="09XXXXXXXXX" pattern="09[0-9]{9}" form="student-test" required>
-          
+        <div class="labeled-field">
           <label for="email">E-Mail</label>
           <input type="email" id="email" form="student-test" required>
-        </div>
+        </div>  
 
-        <div class="full">
-          <input type="submit" value="Take the Test" form="student-test" required>
-        </div>
+        <input type="submit" value="Take the Test" form="student-test" required>
       </form>
     </div>
 
