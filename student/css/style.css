@@ -158,7 +158,7 @@ main {
     .login input[type="submit"]:hover {background-color: #a2d4aa;text-decoration: none;}
     .login input[type="submit"]:active {color: #1a1a1a;}
 
-  #student-test {
+  #new-student {
     width: 60%;
     margin: 10px auto;
     display: flex;
@@ -166,7 +166,7 @@ main {
     justify-content: center;
   }
 
-    #student-test > .labeled-field {
+    #new-student > .labeled-field {
       width: 50%;
     }
 

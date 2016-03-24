@@ -9,5 +9,9 @@ $(function () {
     }
   });
 
+  $('#new-student').submit(function (e) {
+    console.log("yo")
+  });
+
   // add more code here
 });
