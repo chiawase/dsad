@@ -8,4 +8,6 @@ $(function () {
       window.location.href = 'guidance/dashboard.html';
     }
   });
+
+  // add more code here
 });
