@@ -103,12 +103,14 @@ header {
       width: 100%;
     }
 
-    .navigation li a:hover {
+    .navigation li a:hover,
+    .navigation li a.active {
       background-color: rgba(120, 144, 156, 0.15);
     }
 
 main {
   width: 100%;
+  padding: 2em;
   min-height: calc(100vh - 3.5em);
   display: flex;
 }
@@ -119,9 +121,7 @@ main {
   align-content: center;
 }
   /* FOR INDEX */
-  #main {
-    padding: 2em;
-  }
+  #main {}
 
     #main .heading {
       font-size: 1.75em;
@@ -160,6 +160,8 @@ main {
   /* FOR FORMS */
   .form-block {
     width: 50%;
+    padding-bottom: 1em;
+    background-color: #eceff1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -168,6 +170,14 @@ main {
     .form-block > * {
       text-align: center;
       margin-bottom: 0.25em;
+    }
+
+    .form-block h1 {
+      background-color: #5a5050;
+      width: 100%;
+      margin: 0;
+      padding: 0.5em;
+      color: #fff;
     }
 
     .form-block p {
@@ -181,21 +191,47 @@ main {
       margin: 0 auto;
     }
 
-    .form-block input[type="date"] {
+    .form-block input[type=text],
+    .form-block textarea {
+      width: 100%;
+      border: none;
+      padding: 1em;
+      background-color: transparent;
+      border-bottom: 1px solid #a1a1a1;
+      transition: background-color 400ms ease;
+    }
+
+      .form-block input[type=text]:focus,
+      .form-block textarea:focus {
+        outline: none;
+        background-color: #fff;
+        transition: background-color 400ms ease;
+      }
+
+    .form-block input[type=date] {
       width: 85%;
     }
 
-    .form-block input[type="submit"] {
-      margin-top: 10px;
-      padding: 5px 25px;
+    .form-block input[type=submit] {
+      margin-top: 1em;
+      margin-right: 1em;
+      padding: 0.25em 0.75em;
       background-color: #43aca7;
       border: none transparent;
       color: #fff;
       font-size: 1.25em;
       cursor: pointer;
+      align-self: flex-end;
+      border-radius: 0.25em;
+      transition: 200ms;
     }
 
-    .form-block input[type="submit"]:hover {background-color: #a2d4aa;text-decoration: none;}
+    .form-block input[type="submit"]:hover {
+      background-color: #a2d4aa;
+      text-decoration: none;
+      transition: 200ms;
+    }
+
     .form-block input[type="submit"]:active {color: #1a1a1a;}
 
   /* FOR NEW STUDENT LOGIN PAGE */

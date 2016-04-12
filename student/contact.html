@@ -8,15 +8,31 @@
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
-  <main class="wrapper center">
-    <!-- insert form here -->
-
+  <header>
+    <div class="logo"><h1>DSAD</h1></div>
     <nav>
-      <a href="index.html">Home</a> | <a href="test-start.html">Take the Test</a> | <a href="contact.html">Contact a Counselor</a> | <a href="about.html">About</a>
+      <ul class="navigation" role="navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="test-start.html">Take the Test</a></li>
+        <li><a class="active" href="contact.html">Contact a Counselor</a></li>
       </ul>
     </nav>
+  </header>
+  <main class="wrapper center" id="contact">
+    <div class="form-block">
+      <h1>Contact a Counselor</h1>
+      <form id="contact-counselor" action="contact-sent.html">
+        <input type="text" id="name" placeholder="Enter name..." form="contact-counselor" required>
+        <input type="text" id="id-number" placeholder="Enter ID Number..." form="contact-counselor" pattern="[0-9]{6}" required>
+        <input type="text" id="contact-info" placeholder="Enter email or cellphone number..." form="contact-counselor" pattern="[a-z0-9]+[_a-z0-9\.-]*[a-z0-9]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})|[0-9]{11,}" required>
+
+        <textarea id="inquiry" placeholder="Type your message here" form="contact-counselor" rows="5" cols="10"></textarea>
+
+        <input type="submit" value="Send" form="contact-counselor">
+      </form>
+    </div>
   </main>
   <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-  <script src="..js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
