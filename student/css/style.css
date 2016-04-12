@@ -145,9 +145,13 @@ main {
       background-color: #43aca7;
       border-radius: 0.25em;
       color: #fff;
-      font-size: 1.25em;
+      
       transition: 200ms;
     }
+
+      #main .button {
+        font-size: 1.25em;
+      }
 
       .button:hover {
         background-color: #a2d4aa;
