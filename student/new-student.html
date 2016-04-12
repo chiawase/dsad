@@ -8,45 +8,50 @@
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
-  <main class="wrapper center">
-    <div class="login">
-      <h1>Welcome!</h1>
+  <header>
+    <div class="logo"><h1>DSAD</h1></div>
+    <nav>
+      <ul class="navigation" role="navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="test-start.html">Take the Test</a></li>
+        <li><a href="contact.html">Contact a Counselor</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="wrapper center" id="new-student-login">
+    <div class="form-block">
+      <h1 class="heading">Welcome!</h1>
       <p>Please enter the following information, then proceed to take the test.</p>
 
       <form id="new-student" action="test-start.html">
         <div class="labeled-field">
           <label for="name">Name</label>
-          <input type="text" id="name" form="new-student" required>
+          <input type="text" id="name" form="new-student" placeholder="ex. Ramos, Jose Imanuel" pattern="(.)+, (\w+\s)+" required>
         </div>
         <div class="labeled-field">
           <label for="id-number">ID Number</label>
-          <input type="text" id="id-number" form="new-student" pattern="[0-9]{6}" required>
+          <input type="text" id="id-number" form="new-student" placeholder="ex. 123269" pattern="[0-9]{6}" required>
         </div>
         <div class="labeled-field">
           <label for="year-course">Year and Course</label>
-          <input type="text" id="year-course" placeholder="Ex. 4 BFA ID" pattern="[1-5] [A-Za-z- ]{2,}" form="new-student" required>
+          <input type="text" id="year-course" placeholder="Ex. 4 BFA Information Design" pattern="[1-5] [A-Za-z- ]{2,}" form="new-student" required>
         </div>
         <div class="labeled-field">
           <label for="cell-num">Cellphone #</label>
-          <input type="TEXT" id="cell-num" placeholder="09XXXXXXXXX" pattern="09[0-9]{9}" form="new-student" required>
+          <input type="TEXT" id="cell-num" placeholder="ex. 09228119542" pattern="09[0-9]{9}" form="new-student" required>
         </div>  
         <div class="labeled-field">
           <label for="birthday">Date of Birth</label>
-          <input type="date" id="birthday" form="new-student" required>
+          <input type="date" id="birthday" placeholder="ex. 06/18/1994" form="new-student" required>
         </div>
         <div class="labeled-field">
           <label for="email">E-Mail</label>
-          <input type="email" id="email" form="new-student" required>
+          <input type="email" id="email" placeholder="ex. iman@yahoo.com" form="new-student" required>
         </div>  
 
         <input type="submit" value="Take the Test" form="new-student">
       </form>
     </div>
-
-    <nav>
-      <a href="index.html">Home</a> | <a href="test-start.html">Take the Test</a> | <a href="contact.html">Contact a Counselor</a> | <a href="about.html">About</a>
-      </ul>
-    </nav>
   </main>
   <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="..js/main.js"></script>

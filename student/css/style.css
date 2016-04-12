@@ -176,7 +176,7 @@ main {
       margin-bottom: 0.25em;
     }
 
-    .form-block h1 {
+    #contact-counselor-form h1 {
       background-color: #5a5050;
       width: 100%;
       margin: 0;
@@ -240,16 +240,36 @@ main {
 
   /* FOR NEW STUDENT LOGIN PAGE */
   #new-student {
-    width: 60%;
+    width: 75%;
     margin: 10px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
+  #new-student-login .form-block {
+    background-color: transparent;
+  }
+
     #new-student > .labeled-field {
-      width: 50%;
+      width: 40%;
+      margin: 1em;
     }
+
+    #new-student input:not([type=submit]) {
+      margin: 0.5em;
+      padding: 0.5em;
+      background-color: #eceff1;
+      border: none;
+      border-bottom: 1px solid transparent;
+      width: 100%;
+      transition: border-bottom 200ms;
+    }
+
+      #new-student input:not([type=submit]):focus {
+        border-bottom: 1px solid #a1a1a1;
+        transition: border-bottom 200ms;
+      }
 
   /* FOR ABOUT PAGE */
   #about {
@@ -269,3 +289,14 @@ main {
     flex-direction: column;
     align-items: center;
   }
+
+  /* FOR TEST QUESTIONS (STUDENT) */
+  #test-start {}
+
+    #test-start .heading {
+      font-size: 2em;
+    }
+
+    #test-start .buttons .button {
+      padding: 0.5em 1.5em;
+    }
