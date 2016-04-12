@@ -256,7 +256,8 @@ main {
       margin: 1em;
     }
 
-    #new-student input:not([type=submit]) {
+    #new-student input:not([type=submit]),
+    #old-student-login input[type=text] {
       margin: 0.5em;
       padding: 0.5em;
       background-color: #eceff1;
@@ -271,16 +272,10 @@ main {
         transition: border-bottom 200ms;
       }
 
-  /* FOR ABOUT PAGE */
-  #about {
-    flex-direction: column;
+  /* FOR OLD STUDENT PAGE */
+  #old-student-login input[type=text] {
+    width: 15%;
   }
-
-    #about > * {
-      width: 70%;
-      text-align: center;
-      margin: 0.5em auto;
-    }
 
   /* FOR CONTACT COUNSELOR PAGE */
   #contact-counselor {
