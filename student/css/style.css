@@ -277,6 +277,10 @@ main {
     width: 15%;
   }
 
+  #old-student-login .buttons {
+    width: 30%;
+  }
+
   /* FOR CONTACT COUNSELOR PAGE */
   #contact-counselor {
     width: 100%;
