@@ -1,8 +1,12 @@
 var testNumber = 1;
 var testNumberDiv = document.getElementById("test-question-number");
-var choices = document.getElementsByClassName("test-choice");
-
+var choices = document.getElementById("test-choices");
+var sumAnswer = 0;
 var questions = {
+  1: ["I don't usually feel sad",
+      "I feel sad sometimes",
+      "I feel sad often",
+      "I feel sad all the time"],
   2: ["I don't worry about the future",
         "I worry about the future",
         "I have nothing to look forward to",
@@ -85,17 +89,31 @@ var questions = {
       "I've completely lost interest in sex"]
 }
 
-console.log(questions)
+window.onload = function () {
+  setQuestions();
 
-for (var i = 0; i < choices.length; i++) {
-  (function(index) {
-    choices[i].onclick = function() {
-      // move to next question
-      testNumber++;
-      testNumberDiv.innerHTML = "0" + testNumber;
-      console.log(this.innerHTML)
+  sessionStorage.setItem("result", sumAnswer);
+}
 
-      // sessionStorage.setItem("answer_" + testNumber, this.innerHTML);
+function nextQuestion() {
+  // store answer
+  for (var i = 0; i < questions[testNumber].length; i++) {
+    if (event.target.innerHTML == questions[testNumber][i]) {
+      sumAnswer = sumAnswer + (i+1);
+      sessionStorage.setItem("result", sumAnswer);
+      console.log(sumAnswer)
     }
-  })(i);
+  }
+  
+  // move to next question
+  testNumber++;
+  setQuestions();
+}
+
+function setQuestions() {
+  choices.innerHTML = '';
+  testNumberDiv.innerHTML = '0' + testNumber;
+  for (var i = 0; i < 4; i++) {
+    choices.innerHTML += '<a href="#" onclick="nextQuestion();" class="button test-choice">' + questions[testNumber][i] + '</a>';
+  }
 }
