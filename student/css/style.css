@@ -325,13 +325,14 @@ main {
       border-radius: 50%;
     }
 
-    #test-questions .test-choices {
+    #test-choices {
       display: block;
-      flex-basis: 50%;
+      flex-basis: 75%;
     }
 
-      #test-questions .test-choices .test-choice {
+      #test-choices .test-choice {
         display: block;
         margin: 1em 0;
         text-align: center;
+        cursor: pointer;
       }
