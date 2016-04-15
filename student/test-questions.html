@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Test Instructions | Depression-Suicidal Assessment Database</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+  <header>
+    <div class="logo"><h1>DSAD</h1></div>
+    <nav>
+      <ul class="navigation" role="navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="test-start-choice.html">Take the Test</a></li>
+        <li><a href="contact.html">Contact a Counselor</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="wrapper center" id="test">
+    <div id="test-questions">
+      <div id="test-question-number">01</div>
+      <div class="test-choices">
+        <a href="#" onclick="nextQuestion();" class="button test-choice">I don't usually feel sad</a>
+        <a href="#" onclick="nextQuestion();" class="button test-choice">I feel sad sometimes</a>
+        <a href="#" onclick="nextQuestion();" class="button test-choice">I feel sad often</a>
+        <a href="#" onclick="nextQuestion();" class="button test-choice">I feel sad all the time</a>
+      </div>
+    </div>
+  </main>
+  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
