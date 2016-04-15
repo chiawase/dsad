@@ -75,14 +75,15 @@ header {
 
   .logo {
     color: #fff; /* temporary? */
-    width: 20%;
-    margin-left: 5em;
+    width: 25%;
+    display: flex;
+    justify-content: center;
   }
 
   nav {
     display: block;
     text-align: center;
-    width: 60%;
+    width: 75%;
     height: 100%;
   }
 
