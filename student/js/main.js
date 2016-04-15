@@ -96,23 +96,33 @@ window.onload = function () {
 }
 
 function nextQuestion() {
+
   // store answer
   for (var i = 0; i < questions[testNumber].length; i++) {
     if (event.target.innerHTML == questions[testNumber][i]) {
       sumAnswer = sumAnswer + (i+1);
       sessionStorage.setItem("result", sumAnswer);
-      console.log(sumAnswer)
     }
   }
   
   // move to next question
   testNumber++;
-  setQuestions();
+  // check first if student has answered all questions
+  if (testNumber > Object.keys(questions).length) {
+    window.location = 'test-questions-done.html';
+  } else {
+    setQuestions();
+  }
 }
 
 function setQuestions() {
   choices.innerHTML = '';
-  testNumberDiv.innerHTML = '0' + testNumber;
+  if (testNumber <= 9) {
+    testNumberDiv.innerHTML = '0' + testNumber;
+  } else {
+    testNumberDiv.innerHTML = testNumber;
+  }
+
   for (var i = 0; i < 4; i++) {
     choices.innerHTML += '<a href="#" onclick="nextQuestion();" class="button test-choice">' + questions[testNumber][i] + '</a>';
   }
