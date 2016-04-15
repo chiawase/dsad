@@ -121,7 +121,10 @@ main {
   align-content: center;
 }
   /* FOR INDEX */
-  #main {}
+  #main {
+    width: 75%;
+    margin: 0 auto;
+  }
 
     #main .heading {
       font-size: 1.75em;
@@ -129,8 +132,9 @@ main {
 
     #main p {
       text-align: center;
-      width: 50%;
+      width: 60%;
       line-height: 125%;
+      margin-bottom: 1em;
     }
 
   .buttons {
@@ -140,17 +144,24 @@ main {
     justify-content: space-around;
   }
 
+    #test-start .buttons {
+      width: 20%;
+    }
+
     .button {
       padding: 0.75em;
       background-color: #43aca7;
       border-radius: 0.25em;
       color: #fff;
-      
       transition: 200ms;
     }
 
-      #main .button {
+      #main .buttons .button {
         font-size: 1.25em;
+      }
+
+      #test-start .buttons .button {
+        padding: 0.75em 1.5em;
       }
 
       .button:hover {
@@ -238,6 +249,7 @@ main {
 
     .form-block input[type="submit"]:active {color: #1a1a1a;}
 
+
   /* FOR NEW STUDENT LOGIN PAGE */
   #new-student {
     width: 75%;
@@ -267,7 +279,9 @@ main {
       transition: border-bottom 200ms;
     }
 
-      #new-student input:not([type=submit]):focus {
+      #new-student input:not([type=submit]):focus,
+      #old-student-login input[type=text] {
+        outline: none;
         border-bottom: 1px solid #a1a1a1;
         transition: border-bottom 200ms;
       }
@@ -290,12 +304,34 @@ main {
   }
 
   /* FOR TEST QUESTIONS (STUDENT) */
-  #test-start {}
+  #pre-test {
+    width: 50%;
+    margin: 0 auto;
+  }
 
-    #test-start .heading {
-      font-size: 2em;
+  #test-questions {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+    #test-questions #test-question-number {
+      background-color: #5a5050;
+      color: #fff;
+      padding: 1em 0.6em;
+      margin: 1em 0.25em;
+      font-size: 5em;
+      border-radius: 50%;
     }
 
-    #test-start .buttons .button {
-      padding: 0.5em 1.5em;
+    #test-questions .test-choices {
+      display: block;
+      flex-basis: 50%;
     }
+
+      #test-questions .test-choices .test-choice {
+        display: block;
+        margin: 1em 0;
+        text-align: center;
+      }
