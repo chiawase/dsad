@@ -7,15 +7,19 @@
 }
 
 body {
-  background-color: #547980;
-  font-family: Verdana, Arial, sans-serif;
-  color: #fff;
+  background-color: #fff;
+  font-family: "Source Sans Pro", Verdana, Arial, sans-serif;
+  color: #1a1a1a;
   overflow-x: hidden;
 }
 
 main {
   width: 100%;
   display: flex;
+}
+
+a {
+  text-decoration: none;
 }
 
 .center {
@@ -40,16 +44,18 @@ main {
       font-size: 1.15em;
     }
 
-    .toggle > input[type="submit"] {
-      margin-top: 10px;
-      padding: 5px 25px;
-      background-color: #43aca7;
-      border: none transparent;
-      color: #fff;
+    .toggle > .button {
+      margin-top: 0.5em;
+      padding: 0.25em 1em;
       font-size: 1.25em;
+      background-color: #43aca7;
+      border-radius: 0.25em;
+      color: #fff;
+      transition: 200ms;
     }
 
-    .toggle > input[type="submit"]:active {
+    .toggle > .button:hover {
       background-color: #a2d4aa;
-      color: #1a1a1a;
+      text-decoration: none;
+      transition: 200ms;
     }
