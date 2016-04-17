@@ -100,7 +100,7 @@ function nextQuestion() {
   // store answer
   for (var i = 0; i < questions[testNumber].length; i++) {
     if (event.target.innerHTML == questions[testNumber][i]) {
-      sumAnswer = sumAnswer + (i+1);
+      sumAnswer = sumAnswer + i;
       sessionStorage.setItem("result", sumAnswer);
     }
   }
