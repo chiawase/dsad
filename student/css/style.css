@@ -6,40 +6,6 @@
   box-sizing: border-box;
 }
 
-/* TEMP STYLES */
-.placeholder {
-  background-color: #fff;
-}
-
-  .placeholder.square.big {
-    width: 5em;
-    height: 5em;
-  }
-
-  .placeholder.square.mid {
-    width: 2.5em;
-    height: 2.5em;
-  }
-
-  .placeholder.square.small {
-    width: 1em;
-    height: 1em;
-  }
-
-  .placeholder.rectangle {
-    background-color: blue;
-  }
-
-  .placeholder.rectangle.mid {
-    width: 20em;
-    height: 17em;
-  }
-
-  .placeholder.rectangle.big {
-    width: 25em;
-    height: 20em;
-  }
-
 body {
   background-color: #fff;
   font-family: "Source Sans Pro", Verdana, Arial, sans-serif;
