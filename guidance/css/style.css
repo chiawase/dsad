@@ -1,58 +1,10 @@
-/* MAIN STYLESHEET for Iman's thesis */
+/* MAIN STYLESHEET for GUIDANCE: Iman's thesis */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  background-color: #547980;
-  font-family: Verdana, Arial, sans-serif;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-main {
-  width: 100%;
-  display: flex;
-}
-
-.center {
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-  .toggle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-    .toggle > * {
-      margin-bottom: 0.25em;
-    }
-
-    .toggle > select {
-      border: none;
-      font-size: 1.15em;
-    }
-
-    .toggle > input[type="submit"] {
-      margin-top: 10px;
-      padding: 5px 25px;
-      background-color: #43aca7;
-      border: none transparent;
-      color: #fff;
-      font-size: 1.25em;
-    }
-
-    .toggle > input[type="submit"]:active {
-      background-color: #a2d4aa;
-      color: #1a1a1a;
-    }
 
 /* TEMP STYLES */
 .placeholder {
@@ -88,74 +40,129 @@ main {
     height: 20em;
   }
 
-/* STUDENT toggle STYLES */
+  .placeholder.circle.big {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+  }
 
+  .placeholder.circle.mid {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+  }
 
-/* GUIDANCE DASHBOARD STYLES */
-header {
+  .placeholder.circle.small {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+  }
+
+body {
+  background-color: #fff;
+  font-family: "Source Sans Pro", Verdana, Arial, sans-serif;
+  color: #1a1a1a;
+  overflow-x: hidden;
+  line-height: 110%;
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: #5a5050;
+}
+
+  a:hover {
+    background-color: rgba(120, 144, 156, 0.15);
+  }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1.5em;
+  line-height: 120%;
+  margin: 0.5em 1.25em;
+}
+
+#wrapper {
   width: 100%;
-  padding: 1em 5em;
-  background-color: #594f4f;
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 
-  .counselor-info img,
-  .counselor-info .placeholder { /* should be img */
-    float: left;
-  }
-
-  .counselor-info .counselor-name {
-    margin-left: 5em;
-  }
-
-  nav .navbar {
-    list-style-type: none;
-    display: flex;
-    align-content: flex-end;
-    align-items: center;
-  }
-
-  nav .navbar .navbar-item {
-    margin: 0 0.5em;
-    padding: 1em;
-    overflow: hidden;
-  }
-
-    nav .navbar .navbar-item.active {
-      margin-bottom: -3em;
-      background-color: #a2d4aa;
-      border-bottom: 3em solid #a2d4aa;
-    }
-
-main {
-  margin-top: 2em;
-  justify-content: space-around;
-  align-items: flex-start;
+/* sidebar styles */
+#sidebar {
+  width: 20%;
+  height: 100vh;
+  position: fixed;
+  background-color: #5a5050;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
 }
+  #top {}
 
-  .calendars, .articles {
-    background-color: #a2d4aa;
-    display: flex;
-    flex-direction: column;
-  }
-
-    .calendars > * {
-      margin: 1em;
+    #logo {
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      font-size: 2em;
     }
 
-  article {
-    width: 50%;
-    height: 50%;
-  }
+      #logo h1 {
+        margin: 0.5em;
+      }
 
-  .article-image {
+    #counselor-info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+      #counselor-pic {}
+
+        /*temporary*/
+        #counselor-pic > div {
+          margin: 1em;
+        }
+
+      #counselor-name {
+        color: #43aca7;
+      }
+
+  nav {
     width: 100%;
+    margin-top: 4em;
   }
 
-  #featured {
-    flex-grow: 2;
-  }
+    #side-nav {
+      list-style-type: none;
+    }
 
+      .nav-item {
+        width: 100%;
+      }
 
+        .nav-item a {
+          display: block;
+          width: 100%;
+          padding: 1em;
+          color: #fff;
+        }
+
+          .nav-item .fa { /* icon style override */
+            color: #43aca7;
+            margin-right: 1em;
+          }
+
+          .nav-item .notif-num {
+            position: absolute;
+            right: 2em;
+            width: 2em;
+            padding: 0.15em 0.4em;
+            background-color: #43aca7;
+            text-align: center;
+            border-radius: 1.3em;
+          }
