@@ -270,6 +270,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .email {
       background-color: #eceff1;
+      cursor: pointer;
     }
 
       .email.new {
@@ -288,3 +289,11 @@ h1, h2, h3, h4, h5, h6 {
         color: #7e919a;
         margin-left: 0.5em;
       }
+
+  #show-message {
+    width: 100%;
+    position: absolute;
+    top: 6.6em;
+    background-color: #eceff1;
+    height: calc(100vh - 6.6em);
+  }
