@@ -26,27 +26,27 @@
       <form id="new-student" action="pre-test.html">
         <div class="labeled-field">
           <label for="name">Name</label>
-          <input type="text" id="name" form="new-student" placeholder="ex. Ramos, Jose Imanuel" >
+          <input type="text" id="name" form="new-student" placeholder="ex. Ramos, Jose Imanuel" required>
         </div>
         <div class="labeled-field">
           <label for="id-number">ID Number</label>
-          <input type="text" id="id-number" form="new-student" placeholder="ex. 123269" pattern="[0-9]{6}" >
+          <input type="text" id="id-number" form="new-student" placeholder="ex. 123269" pattern="[0-9]{6}" required>
         </div>
         <div class="labeled-field">
           <label for="year-course">Year and Course</label>
-          <input type="text" id="year-course" placeholder="Ex. 4 BFA Information Design" pattern="[1-5] [A-Za-z- ]{2,}" form="new-student" >
+          <input type="text" id="year-course" placeholder="Ex. 4 BFA Information Design" pattern="[1-5] [A-Za-z- ]{2,}" form="new-student" required>
         </div>
         <div class="labeled-field">
           <label for="cell-num">Cellphone #</label>
-          <input type="TEXT" id="cell-num" placeholder="ex. 09228119542" pattern="09[0-9]{9}" form="new-student" >
+          <input type="TEXT" id="cell-num" placeholder="ex. 09228119542" pattern="09[0-9]{9}" form="new-student" required>
         </div>  
         <div class="labeled-field">
           <label for="birthday">Date of Birth</label>
-          <input type="date" id="birthday" placeholder="ex. 06/18/1994" form="new-student" >
+          <input type="date" id="birthday" placeholder="ex. 06/18/1994" form="new-student" required>
         </div>
         <div class="labeled-field">
           <label for="email">E-Mail</label>
-          <input type="email" id="email" placeholder="ex. iman@yahoo.com" form="new-student" >
+          <input type="email" id="email" placeholder="ex. iman@yahoo.com" form="new-student" required>
         </div>  
 
         <input type="submit" value="Take the Test" form="new-student">
