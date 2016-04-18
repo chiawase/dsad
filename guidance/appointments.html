@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Guidance Dashboard | Depression-Suicidal Assessment Database</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- for calendar -->
+  <link rel="stylesheet" type="text/css" href="assets/fullcalendar.css">
+  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="assets/moment.min.js"></script>
+  <script src="assets/fullcalendar.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function (e) {
+    $("#calendar").fullCalendar({
+      header: {
+        left: 'prev',
+        center: 'title',
+        right: 'next'
+      }
+    });
+  });
+  </script>
+
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
 </head>
@@ -36,14 +54,10 @@
       <div id="search">
         <i class="fa fa-search"></i> <input type="text" placeholder="Search..." name="search">
       </div>
-      <ul id="urgency-status">
-        <li><a href="#" class="status-item active">Compose</a></li>
-        <li><a href="#" class="status-item active">Delete</a></li>
-      </ul>
 
+      <div id="calendar"></div>
     </div>
   </div>
-  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
