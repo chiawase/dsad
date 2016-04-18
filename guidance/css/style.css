@@ -121,12 +121,14 @@ h1, h2, h3, h4, h5, h6 {
       align-items: center;
     }
 
-      #counselor-pic {}
-
-        /*temporary*/
-        #counselor-pic > div {
-          margin: 1em;
-        }
+      #counselor-pic {
+        width: 5em;
+        height: 5em;
+        border-radius: 50%;
+        background: url('../img/counselor.jpg') no-repeat center;
+        background-size: cover;
+        margin: 1em;
+      }
 
       #counselor-name {
         color: #43aca7;
