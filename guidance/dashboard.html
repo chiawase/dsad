@@ -6,7 +6,7 @@
   <title>Guidance Dashboard | Iman's Site</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
 </head>
 <body>
   <div id="wrapper">
@@ -33,7 +33,40 @@
     </div>
 
     <div id="main">
-      
+      <div id="search">
+        <i class="fa fa-search"></i> <input type="text" placeholder="Search..." name="search">
+      </div>
+      <ul id="urgency-status">
+        <li><a href="#" class="status-item active">All</a></li>
+        <li><a href="#" class="status-item">Urgent</a></li>
+        <li><a href="#" class="status-item">Serious</a></li>
+        <li><a href="#" class="status-item">Normal</a></li>
+      </ul>
+      <table id="database">
+        <thead>
+          <tr>
+            <th><a href="#"><i class="fa fa-caret-down"></i></a> Name</th>
+            <th><a href="#"><i class="fa fa-caret-down"></i></a> ID Number</th>
+            <th><a href="#"><i class="fa fa-caret-down"></i></a> Year and Course</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- where the magic happens -->
+          <tr>
+            <td class="name"><div class="urgency urgent"></div> Ramos, Jose Imanuel</td>
+            <td>123269</td>
+            <td>4 BFA Information Design</td>
+            <td>For immediate followup session</td>
+          </tr>
+          <tr>
+            <td class="name"><div class="urgency not-urgent"></div> Señires, Chi</td>
+            <td>123648</td>
+            <td>4 BS CS</td>
+            <td>Okay</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
   <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>

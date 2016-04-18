@@ -166,3 +166,93 @@ h1, h2, h3, h4, h5, h6 {
             text-align: center;
             border-radius: 1.3em;
           }
+
+/* MAIN STYLES */
+#main {
+  width: 80%;
+  margin-left: 20%;
+  min-height: 100vh;
+}
+
+  #search {
+    position: relative;
+    width: 100%;
+  }
+
+    #search .fa-search {
+      position: absolute;
+      top: 0.75em;
+      left: 1em;
+      color: #aaa;
+    }
+
+    #search input[type=text] {
+      width: 100%;
+      border: none;
+      background-color: #eceff1;
+      padding: 1em;
+      text-indent: 28px;
+    }
+
+  #urgency-status {
+    width: 100%;
+    list-style-type: none;
+  }
+
+    #urgency-status li {
+      display: inline-block;
+      margin: 1em 0.5em;
+    }
+
+      #urgency-status .status-item {
+        display: block;
+        padding: 0.5em 1em;
+        background-color: #eceff1;
+        color: #7e919a;
+        border-radius: 1em;
+      }
+
+        #urgency-status .status-item:hover,
+        #urgency-status .status-item.active {
+          color: #fff;
+          background-color: #44ada8;
+        }
+
+  #database {
+    width: 100%;
+    color: #7e919a;
+  }
+
+    #database thead th {
+      padding: 1em;
+    }
+    
+      #database thead th .fa {
+        color: #7e919a;
+      }
+
+    #database tbody {
+      background-color: #eceff1;
+    }
+
+      #database td {
+        padding: 1em;
+        text-align: center;
+      }
+
+      #database .name {
+        display: flex;
+        align-items: center;
+      }
+
+        #database .name .urgency {
+          margin-left: 2em;
+          margin-right: 1em;
+          width: 2.5em;
+          height: 2.5em;
+          border-radius: 50%;
+        }
+
+          #database .name .urgency.urgent {background-color: #ed1c24;}
+          #database .name .urgency.semi-urgent {background-color: #f7941d;}
+          #database .name .urgency.not-urgent {background-color: #00a651;}
