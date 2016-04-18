@@ -89,14 +89,52 @@ var questions = {
       "I've completely lost interest in sex"]
 }
 
-window.onload = function () {
-  setQuestions();
+var studentIndex = 0;
 
-  sessionStorage.setItem("result", sumAnswer);
+if (localStorage.getItem("studentIndex") != undefined) {
+  studentIndex = localStorage.getItem("studentIndex");
+}
+
+window.onload = function () {
+  var URL = window.location.href;
+  if (URL.indexOf('test-questions.html') > -1) {
+    setQuestions();
+    sessionStorage.setItem("result", sumAnswer);
+  } else if (URL.indexOf('new-student.html') > -1) {
+    var form = document.getElementById("new-student");
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var student = {};
+      var test = document.getElementsByClassName("labeled-field");
+      for (var i = 0; i < test.length; i++) {
+        var input = test[i].children[1];
+        student[input.id] = input.value;
+      }
+      studentIndex++;
+      localStorage.setItem("student"+studentIndex, JSON.stringify(student));
+      localStorage.setItem("studentIndex", studentIndex);
+      window.location = 'pre-test.html';
+    });
+  } else if (URL.indexOf('old-student.html') > -1) {
+    var button = document.getElementById("take-test");
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      var idnum = document.getElementById("id-number");
+      var noOfStudents = localStorage.getItem("studentIndex");
+      for (var i = 1; i <= noOfStudents; i++) {
+        var student = JSON.parse(localStorage.getItem("student"+i));
+        if (student["id-number"] == idnum.value) {
+          console.log("hey")
+        }
+      }
+      // window.location = 'pre-test.html';
+    });
+    console.log("hey")
+  }
+
 }
 
 function nextQuestion() {
-
   // store answer
   for (var i = 0; i < questions[testNumber].length; i++) {
     if (event.target.innerHTML == questions[testNumber][i]) {
@@ -109,6 +147,9 @@ function nextQuestion() {
   testNumber++;
   // check first if student has answered all questions
   if (testNumber > Object.keys(questions).length) {
+    var student = JSON.parse(localStorage.getItem("student"+studentIndex));
+    student["result"] = sumAnswer;
+    localStorage.setItem("student"+studentIndex, JSON.stringify(student));
     window.location = 'test-questions-done.html';
   } else {
     setQuestions();
@@ -124,6 +165,12 @@ function setQuestions() {
   }
 
   for (var i = 0; i < 4; i++) {
-    choices.innerHTML += '<a href="#" onclick="nextQuestion();" class="button test-choice">' + questions[testNumber][i] + '</a>';
+    var choice = document.createElement("a");
+    choice.href = '#';
+    choice.className = 'button test-choice';
+    var text = document.createTextNode(questions[testNumber][i]);
+    choice.appendChild(text);
+    choice.addEventListener('click', nextQuestion);
+    choices.appendChild(choice);
   }
 }
