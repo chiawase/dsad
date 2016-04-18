@@ -178,6 +178,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 80%;
   margin-left: 20%;
   min-height: 100vh;
+  position: relative;
 }
 
   #search {
@@ -296,4 +297,53 @@ h1, h2, h3, h4, h5, h6 {
     top: 6.6em;
     background-color: #eceff1;
     height: calc(100vh - 6.6em);
+    display: none;
   }
+
+    #show-message .subject {
+      background-color: #5a5050;
+      padding: 0.5em 1em;
+      margin: 0;
+      color: #fff;
+    }
+
+    #show-message input[name="sender"],
+    #show-message input[name="receiver"] {
+      width: 100%;
+      padding: 0.75em;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #5a5050;
+    }
+
+    #show-message input[name="date"] {
+      background-color: transparent;
+      padding: 0.75em;
+      border: none;
+      position: absolute;
+      top: 4em;
+      right: 0;
+      z-index: 2;
+    }
+
+    #show-message textarea {
+      width: 100%;
+      padding: 0.75em;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #5a5050;
+    }
+
+    .buttons {
+      width: 60%;
+      margin-top: 1em;
+    }
+
+    .buttons .button {
+      display: inline-block;
+      padding: 0.5em 1em;
+      margin: 0 0.5em;
+      background-color: #44ada8;
+      color: #fff;
+      border-radius: 1em;
+    }
