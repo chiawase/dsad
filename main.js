@@ -5,7 +5,7 @@ $(function () {
       window.location.href= 'student/index.html';
     } else {
       // If Guidance Login
-      window.location.href = 'guidance/dashboard.html';
+      window.location.href = 'guidance/database.html';
     } 
   });
 });
