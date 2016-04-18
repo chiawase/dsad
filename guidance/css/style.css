@@ -248,14 +248,15 @@ h1, h2, h3, h4, h5, h6 {
       #database td {
         padding: 1em;
         text-align: center;
+        cursor: pointer;
       }
 
-      #database .name {
+      #database .student-name {
         display: flex;
         align-items: center;
       }
 
-        #database .name .urgency {
+        #database .student-name .urgency {
           margin-left: 2em;
           margin-right: 1em;
           width: 2.5em;
@@ -263,9 +264,9 @@ h1, h2, h3, h4, h5, h6 {
           border-radius: 50%;
         }
 
-          #database .name .urgency.urgent {background-color: #ed1c24;}
-          #database .name .urgency.semi-urgent {background-color: #f7941d;}
-          #database .name .urgency.not-urgent {background-color: #00a651;}
+          #database .student-name .urgency.urgent {background-color: #ed1c24;}
+          #database .student-name .urgency.semi-urgent {background-color: #f7941d;}
+          #database .student-name .urgency.not-urgent {background-color: #00a651;}
 
   #messages {}
 
@@ -308,7 +309,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     #show-message input[name="sender"],
-    #show-message input[name="receiver"] {
+    #show-message input[name="receiver"],
+    #show-message input[name="subject"] {
       width: 100%;
       padding: 0.75em;
       background-color: transparent;
@@ -346,4 +348,57 @@ h1, h2, h3, h4, h5, h6 {
       background-color: #44ada8;
       color: #fff;
       border-radius: 1em;
+    }
+
+  #student-preview {
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 14.5em;
+    background-color: #eceff1;
+    border-top: 2px solid #5a5050;
+  }
+
+    #student-sidebar {
+      display: flex;
+      width: 20%;
+      flex-direction: column;
+      align-items: center;
+    }
+
+      #student-sidebar > .fa {
+        font-size: 2.25em;
+        color: #7e919a;
+      }
+
+    #sessions {
+      display: block;
+      width: 100%;
+    }
+
+      #sessions .session {
+        padding: 1em;
+        width: 100%;
+        cursor: pointer;
+      }
+
+        #sessions .session > .fa {
+          margin-right: 0.5em;
+        }
+
+        #sessions .session.selected,
+        #sessions .session:hover {
+          padding: 1em;
+          width: 100%;
+          background-color: rgba(120, 144, 156, 0.15);
+          cursor: pointer;
+        }
+
+          #sessions .session.selected > .fa {
+            color: #43aca7;
+          }
+
+    #student-area {
+      background-color: #fff;
+      width: 80%;
     }

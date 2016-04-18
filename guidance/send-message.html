@@ -37,12 +37,23 @@
         <i class="fa fa-search"></i> <input type="text" placeholder="Search..." name="search">
       </div>
       <ul id="urgency-status">
-        <li><a href="#" class="status-item active">All</a></li>
-        <li><a href="#" class="status-item">Urgent</a></li>
-        <li><a href="#" class="status-item">Serious</a></li>
-        <li><a href="#" class="status-item">Normal</a></li>
+        <li><a href="send-message.html" class="status-item active">Compose</a></li>
+        <li><a href="#" class="status-item active">Delete</a></li>
       </ul>
 
+      <div id="show-message">
+        <h1 class="subject">New Message</h1>
+        <form id="email-message">
+          <input type="text" name="sender" placeholder="To <email> [name]">
+          <!-- <input type="text" name="date"> -->
+          <input type="text" name="subject" placeholder="Subject here...">
+          <textarea name="message" rows="20" cols="20" placeholder="Message here..."></textarea>
+          <div class="buttons">
+            <a href="#" class="button">Send</a>
+            <a href="#" class="button">Attach Files</a>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
   <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>

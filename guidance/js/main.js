@@ -22,3 +22,22 @@ for (var i = 0; i < emails.length; i++) {
     emailForm.children[3].innerText = emailPreview;
   });
 }
+
+window.onload = function (e) {
+  if (window.location.href.indexOf('database.html') > -1) {
+    var students = document.getElementsByClassName("student-name");
+    for (var i = 0; i < students.length; i++) {
+      students[i].addEventListener('click', function (e) {
+        var parent = this.parentElement;
+        if (document.getElementById("student-preview").style.display != 'flex') {
+          document.getElementById("student-preview").style.display = 'flex';
+        } else {
+          document.getElementById("student-preview").style.display = 'none';
+        }
+          
+      });
+    }
+  } else if (window.location.href.indexOf('send-message.html') > -1) {
+    document.getElementById("show-message").style.display = 'block';
+  }
+}
