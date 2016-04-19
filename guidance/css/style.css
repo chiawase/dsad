@@ -265,8 +265,8 @@ h1, h2, h3, h4, h5, h6 {
         }
 
           #database .student-name .urgency.urgent {background-color: #ed1c24;}
-          #database .student-name .urgency.semi-urgent {background-color: #f7941d;}
-          #database .student-name .urgency.not-urgent {background-color: #00a651;}
+          #database .student-name .urgency.serious {background-color: #f7941d;}
+          #database .student-name .urgency.normal {background-color: #00a651;}
 
   #messages {}
 

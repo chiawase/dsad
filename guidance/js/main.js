@@ -2,7 +2,6 @@ window.onload = function (e) {
   if (window.location.href.indexOf('database.html') > -1) {
     // load students from localStorage
     var noOfStudents = localStorage.getItem("studentIndex");
-    // var studentRow = document.getElementsByClassName("student");
     var studentDetails = document.getElementById("student-details");
     for (var i = 1; i <= noOfStudents; i++) {
       var student = JSON.parse(localStorage.getItem("student"+i));
@@ -50,6 +49,38 @@ window.onload = function (e) {
       studentRow.appendChild(studentRemarks);
 
       studentDetails.appendChild(studentRow);
+    }
+
+    // set up toggle buttons for URGENT, SERIOUS, and NORMAL (and ALL)
+    var urgencyButtons = document.getElementsByClassName("status-item");
+    for (var u = 0; u < urgencyButtons.length; u++) {
+      urgencyButtons[u].addEventListener('click', function (e) {
+        for (var d = 0; d < urgencyButtons.length; d++) {
+          urgencyButtons[d].className = 'status-item';
+        }
+        this.className += ' active';
+        var studentRows = document.getElementsByClassName("student");
+        for (var s = 0; s < studentRows.length; s++) {
+          studentRows[s].style.display = 'none';
+        }
+
+        var status = document.getElementsByClassName("urgency");
+        switch (this.id) {
+          case "status-urgent":
+            status = document.getElementsByClassName("urgent");
+            break;
+          case "status-serious":
+            status = document.getElementsByClassName("serious");
+            break;
+          case "status-normal":
+            status = document.getElementsByClassName("normal");
+            break;
+        }
+
+        for (var i = 0; i < status.length; i++) {
+          status[i].parentElement.parentElement.style.display = 'table-row';
+        }
+      });
     }
 
     var students = document.getElementsByClassName("student-name");
