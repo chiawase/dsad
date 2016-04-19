@@ -123,13 +123,15 @@ window.onload = function () {
       e.preventDefault();
       var idnum = document.getElementById("id-number");
       var noOfStudents = localStorage.getItem("studentIndex");
-      for (var i = 1; i <= noOfStudents; i++) {
-        var student = JSON.parse(localStorage.getItem("student"+i));
-        if (student["id-number"] == idnum.value) {
-          if (student["scheduled"]) window.location = 'pre-test.html';
-          else window.location = 'old-student-error.html';
+      if (noOfStudents != null) {
+        for (var i = 1; i <= noOfStudents; i++) {
+          var student = JSON.parse(localStorage.getItem("student"+i));
+          if (student["id-number"] == idnum.value) {
+            if (student["scheduled"]) window.location = 'pre-test.html';
+            else window.location = 'old-student-error.html';
+          } else window.location = 'old-student-error.html';
         }
-      }
+      } else window.location = 'old-student-error.html';
     });
   }
 
@@ -151,6 +153,14 @@ function nextQuestion() {
     var student = JSON.parse(localStorage.getItem("student"+studentIndex));
     student["result"] = sumAnswer;
     student["scheduled"] = false;
+    if (sumAnswer > 30) { // urgeny
+      student["urgency"] = "urgent";
+    } else if (sumAnswer <= 16) { // normal
+      student["urgency"] = "normal";
+    } else { // serious
+      student["urgency"] = "serious";
+    }
+
     localStorage.setItem("student"+studentIndex, JSON.stringify(student));
     window.location = 'test-questions-done.html';
   } else {
