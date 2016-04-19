@@ -14,11 +14,7 @@ window.onload = function (e) {
       studentName.className = 'student-name';
       // add a div depending on urgency
       var urgency = document.createElement("div");
-      urgency.className = 'urgency urgent'; // temporary, add an if statment here
-      // LEGEND: (for now until Iman updates me)
-      // 0 - 21 -- OK
-      // 22 - 42 -- WARNING
-      // 43 - 63 -- URGENT
+      urgency.className = 'urgency ' + student["urgency"];
       studentName.appendChild(urgency);
       studentName.appendChild(document.createTextNode(student["name"]));
 
