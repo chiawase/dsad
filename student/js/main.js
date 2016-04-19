@@ -97,10 +97,10 @@ if (localStorage.getItem("studentIndex") != undefined) {
 
 window.onload = function () {
   var URL = window.location.href;
-  if (URL.indexOf('test-questions.html') > -1) {
+  if (URL.indexOf('test-questions.html') > -1) { // if in test questions
     setQuestions();
     sessionStorage.setItem("result", sumAnswer);
-  } else if (URL.indexOf('new-student.html') > -1) {
+  } else if (URL.indexOf('new-student.html') > -1) { // if new student prompt
     var form = document.getElementById("new-student");
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -110,12 +110,14 @@ window.onload = function () {
         var input = test[i].children[1];
         student[input.id] = input.value;
       }
+      student["scheduled"] = true;
+
       studentIndex++;
       localStorage.setItem("student"+studentIndex, JSON.stringify(student));
       localStorage.setItem("studentIndex", studentIndex);
       window.location = 'pre-test.html';
     });
-  } else if (URL.indexOf('old-student.html') > -1) {
+  } else if (URL.indexOf('old-student.html') > -1) { // if old student prompt
     var button = document.getElementById("take-test");
     button.addEventListener('click', function (e) {
       e.preventDefault();
@@ -124,12 +126,11 @@ window.onload = function () {
       for (var i = 1; i <= noOfStudents; i++) {
         var student = JSON.parse(localStorage.getItem("student"+i));
         if (student["id-number"] == idnum.value) {
-          console.log("hey")
+          if (student["scheduled"]) window.location = 'pre-test.html';
+          else window.location = 'old-student-error.html';
         }
       }
-      // window.location = 'pre-test.html';
     });
-    console.log("hey")
   }
 
 }
@@ -149,6 +150,7 @@ function nextQuestion() {
   if (testNumber > Object.keys(questions).length) {
     var student = JSON.parse(localStorage.getItem("student"+studentIndex));
     student["result"] = sumAnswer;
+    student["scheduled"] = false;
     localStorage.setItem("student"+studentIndex, JSON.stringify(student));
     window.location = 'test-questions-done.html';
   } else {
