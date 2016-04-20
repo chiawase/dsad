@@ -74,7 +74,9 @@ window.onload = function (e) {
         }
 
         for (var i = 0; i < status.length; i++) {
-          status[i].parentElement.parentElement.style.display = 'table-row';
+          if (status[i].parentElement.parentElement.className == 'student') {
+            status[i].parentElement.parentElement.style.display = 'table-row';
+          }
         }
       });
     }

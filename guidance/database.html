@@ -57,15 +57,30 @@
         <div id="student-sidebar">
           <i class="fa fa-caret-up"></i>
           <div id="sessions">
-            <div class="session selected"><i class="fa fa-circle"></i> Session 4</div>
+            <!-- <div class="session"><i class="fa fa-circle"></i> Session 4</div>
             <div class="session"><i class="fa fa-circle"></i> Session 3</div>
             <div class="session"><i class="fa fa-circle"></i> Session 2</div>
-            <div class="session"><i class="fa fa-circle"></i> Session 1</div>
-            <div class="session"><i class="fa fa-circle"></i> Personal Data</div>
+             --><div class="session"><i class="fa fa-circle"></i> Session 1</div>
+            <div class="session selected"><i class="fa fa-circle"></i> Personal Data</div>
           </div>
           <i class="fa fa-caret-down"></i>
         </div>
         <div id="student-area">
+          <div class="urgency urgent"></div>
+          <div class="labeled-field">
+            <label>
+              Status
+              <select id="urgency-select">
+                <option selected disabled hidden style="display: none;" value=""></option>
+                <option>Normal</option>
+                <option>Serious</option>
+                <option>Urgent</option>
+              </select>
+            </label>
+          </div>
+          <div class="labeled-field">
+            <label>Name <input type="text"></label>
+          </div>
           
         </div>
       </div>
