@@ -70,18 +70,35 @@
           <div class="labeled-field">
             <label>
               Status
-              <select id="urgency-select">
-                <option selected disabled hidden style="display: none;" value=""></option>
-                <option>Normal</option>
-                <option>Serious</option>
-                <option>Urgent</option>
-              </select>
             </label>
+            <select id="urgency-select">
+              <option selected disabled hidden style="display: none;" value=""></option>
+              <option>Normal</option>
+              <option>Serious</option>
+              <option>Urgent</option>
+            </select>
           </div>
           <div class="labeled-field">
-            <label>Name <input type="text"></label>
+            <label>Name<br> <input type="text" id="preview-name"></label>
           </div>
-          
+          <div class="labeled-field">
+            <label>ID Number<br> <input type="text" id="preview-idnum"></label>
+          </div>
+          <div class="labeled-field">
+            <label>Year and Course<br> <input type="text" id="preview-yrcourse"></label>
+          </div>
+          <div class="labeled-field">
+            <label>Cellphone #<br> <input type="text" id="preview-cellno"></label>
+          </div>
+          <div class="labeled-field">
+            <label>Date of Birth<br> <input type="text" id="preview-dob"></label>
+          </div>
+          <div class="labeled-field">
+            <label>E-Mail<br> <input type="text" id="preview-email"></label>
+          </div>
+          <div class="buttons">
+            <a href="#" class="button" id="save-personal-data">Save</a>
+          </div>
         </div>
       </div>
 

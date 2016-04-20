@@ -256,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
         align-items: center;
       }
 
-        #database .student-name .urgency {
+        .urgency {
           margin-left: 2em;
           margin-right: 1em;
           width: 2.5em;
@@ -264,9 +264,9 @@ h1, h2, h3, h4, h5, h6 {
           border-radius: 50%;
         }
 
-          #database .student-name .urgency.urgent {background-color: #ed1c24;}
-          #database .student-name .urgency.serious {background-color: #f7941d;}
-          #database .student-name .urgency.normal {background-color: #00a651;}
+          .urgency.urgent {background-color: #ed1c24;}
+          .urgency.serious {background-color: #f7941d;}
+          .urgency.normal {background-color: #00a651;}
 
   #messages {}
 
@@ -350,8 +350,13 @@ h1, h2, h3, h4, h5, h6 {
       border-radius: 1em;
     }
 
+      .buttons .button:hover {
+        background-color: #6CC6C1;
+      }
+
   #student-preview {
     width: 100%;
+    min-height: 50vh;
     display: none;
     position: absolute;
     top: 14.5em;
@@ -364,6 +369,7 @@ h1, h2, h3, h4, h5, h6 {
       width: 20%;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
     }
 
       #student-sidebar > .fa {
@@ -401,4 +407,48 @@ h1, h2, h3, h4, h5, h6 {
     #student-area {
       background-color: #fff;
       width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
     }
+
+      #student-area > * {
+        margin: 0.5em 0;
+      }
+
+      .labeled-field {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+        .labeled-field label {
+          flex-basis: 100%;
+          text-align: center;
+          font-weight: bold;
+          color: #5a5050;
+        }
+
+          .labeled-field input,
+          .labeled-field select {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #eceff1;
+            border: none;
+            padding: 0.25em;
+          }
+
+          #urgency-select {
+            width: auto;
+          }
+
+      #student-area .buttons {
+        width: 90%;
+      }
+
+        #student-area .buttons .button {
+          position: absolute;
+          right: 2em;
+          bottom: 1em;
+        }
