@@ -435,8 +435,9 @@ h1, h2, h3, h4, h5, h6 {
           color: #5a5050;
         }
 
-          input,
-          .labeled-field select {
+          .labeled-field input,
+          .labeled-field select,
+          .remarks-text {
             width: 50%;
             margin: 0 auto;
             background-color: #eceff1;
