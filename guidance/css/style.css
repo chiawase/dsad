@@ -276,6 +276,12 @@ h1, h2, h3, h4, h5, h6 {
       cursor: pointer;
     }
 
+      .email input[type=checkbox] {
+        margin-left: 1em;
+        margin-right: 0.5em;
+        vertical-align: middle;
+      }
+ 
       .email.new {
         background-color: #fff;
       }
@@ -313,7 +319,7 @@ h1, h2, h3, h4, h5, h6 {
     #show-message input[name="receiver"],
     #show-message input[name="subject"] {
       width: 100%;
-      padding: 0.75em;
+      padding: 0.75em 1.15em;
       background-color: transparent;
       border: none;
       border-bottom: 1px solid #5a5050;
@@ -331,7 +337,7 @@ h1, h2, h3, h4, h5, h6 {
 
     #show-message textarea {
       width: 100%;
-      padding: 0.75em;
+      padding: 0.75em 1.15em;
       background-color: transparent;
       border: none;
       border-bottom: 1px solid #5a5050;
