@@ -1,4 +1,5 @@
 window.onload = function (e) {
+  localStorage.clear();
   if (window.location.href.indexOf('database.html') > -1) {
     // load students from localStorage
     var noOfStudents = localStorage.getItem("studentIndex");
@@ -127,7 +128,12 @@ window.onload = function (e) {
       });
     }
 
-    document.getElementById()
+    var editRemarkButtons = document.getElementsByClassName("edit-remarks");
+    for (var r = 0; r < editRemarkButtons.length; r++) {
+      editRemarkButtons[r].addEventListener('click', function (e) {
+        editRemarkButtons.contentEditable = true;
+      });
+    }
 
     document.getElementById("save-personal-data").addEventListener('click', function (e) {
       e.preventDefault();
