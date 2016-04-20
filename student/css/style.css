@@ -77,7 +77,7 @@ header {
 
 main {
   width: 100%;
-  padding: 2em;
+  padding: 1em 2em;
   min-height: calc(100vh - 3.5em);
   display: flex;
 }
@@ -103,6 +103,10 @@ main {
       line-height: 125%;
       margin-bottom: 1em;
     }
+
+  #banner {
+    width: 100%;
+  }
 
   .buttons {
     width: 50%;
