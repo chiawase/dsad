@@ -1,5 +1,5 @@
 window.onload = function (e) {
-  localStorage.clear();
+  // localStorage.clear(); // only uncomment this pag may errors sa database
   if (window.location.href.indexOf('database.html') > -1) {
     // load students from localStorage
     var noOfStudents = localStorage.getItem("studentIndex");
