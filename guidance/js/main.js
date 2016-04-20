@@ -38,17 +38,17 @@ window.onload = function (e) {
       // add student REMARKS
       var studentRemarks = document.createElement("td");
       studentRemarks.className = 'student-remarks';
-      if (student["remarks"] != null) {
-        studentRemarks.appendChild(document.createTextNode(student["remarks"]));
-      } else {
-        studentRemarks.appendChild(document.createTextNode(""));
-      }
-
       // add input field
       var inputRemarks = document.createElement("input");
       inputRemarks.type = 'text';
       inputRemarks.disabled = 'true';
       inputRemarks.className = 'remarks-text';
+      if (student["remarks"] != null) {
+        inputRemarks.value = student["remarks"];
+      } else {
+        inputRemarks.value = "";
+      }
+
       studentRemarks.appendChild(inputRemarks);
 
       // add edit button
