@@ -248,6 +248,7 @@ h1, h2, h3, h4, h5, h6 {
       #database td {
         padding: 1em;
         text-align: center;
+        position: relative;
         cursor: pointer;
       }
 
@@ -341,7 +342,7 @@ h1, h2, h3, h4, h5, h6 {
       margin-top: 1em;
     }
 
-    .buttons .button {
+    .button {
       display: inline-block;
       padding: 0.5em 1em;
       margin: 0 0.5em;
@@ -350,7 +351,7 @@ h1, h2, h3, h4, h5, h6 {
       border-radius: 1em;
     }
 
-      .buttons .button:hover {
+      .button:hover {
         background-color: #6CC6C1;
       }
 
@@ -359,7 +360,6 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 50vh;
     display: none;
     position: absolute;
-    /*top: 14.5em;*/
     background-color: #eceff1;
     border-top: 2px solid #5a5050;
   }
@@ -457,4 +457,13 @@ h1, h2, h3, h4, h5, h6 {
           position: absolute;
           right: 2em;
           bottom: 1em;
+        }
+
+        .edit-remarks {
+          padding: 0.25em 0.5em;
+          text-align: center;
+          position: absolute;
+          right: 0;
+          top: 0.5em;
+          display: none;
         }

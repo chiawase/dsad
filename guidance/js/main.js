@@ -42,6 +42,11 @@ window.onload = function (e) {
       } else {
         studentRemarks.appendChild(document.createTextNode(""));
       }
+      // add edit button
+      var editButton = document.createElement("a");
+      editButton.className = 'button edit-remarks';
+      editButton.innerHTML = '<i class="fa fa-edit"></i>';
+      studentRemarks.appendChild(editButton); 
       studentRow.appendChild(studentRemarks);
 
       studentDetails.appendChild(studentRow);
@@ -97,6 +102,11 @@ window.onload = function (e) {
                 urgency.value = urgency[x].text;
               }
             }
+
+            urgency.addEventListener('change', function (e) {
+              studentPreview.getElementsByClassName("urgency")[0].className = 'urgency ' + this.options[this.selectedIndex].text.toLowerCase();
+            });
+
             studentPreview.getElementsByClassName("urgency")[0].className = 'urgency ' + currStudent["urgency"];
             document.getElementById("preview-name").value = currStudent["name"];
             document.getElementById("preview-idnum").value = currStudent["id-number"];
@@ -105,17 +115,41 @@ window.onload = function (e) {
             document.getElementById("preview-dob").value = currStudent["birthday"];
             document.getElementById("preview-email").value = currStudent["email"];
           }
-          
         }
 
         if (studentPreview.style.display != 'flex') {
           studentPreview.style.display = 'flex';
+          this.nextSibling.nextSibling.nextSibling.children[0].style.display = 'block';
         } else {
           studentPreview.style.display = 'none';
+          this.nextSibling.nextSibling.nextSibling.children[0].style.display = 'none';
         }
-          
       });
     }
+
+    document.getElementById()
+
+    document.getElementById("save-personal-data").addEventListener('click', function (e) {
+      e.preventDefault();
+      var currStudent;
+      var noOfStudents = localStorage.getItem("studentIndex");
+      var idNumber = document.getElementById("preview-idnum").value;
+      for (var i = 1; i <= noOfStudents; i++) {
+        var currStudent = JSON.parse(localStorage.getItem("student"+i));
+        if (currStudent["id-number"] == idNumber) {
+          currStudent["urgency"] = document.getElementById("urgency-select").value.toLowerCase();
+          currStudent["name"] = document.getElementById("preview-name").value;
+          currStudent["id-number"] = document.getElementById("preview-idnum").value;
+          currStudent["year-course"] = document.getElementById("preview-yrcourse").value;
+          currStudent["cell-num"] = document.getElementById("preview-cellno").value;
+          currStudent["birthday"] = document.getElementById("preview-dob").value;
+          currStudent["email"] = document.getElementById("preview-email").value;
+
+          localStorage.setItem("student"+i, JSON.stringify(currStudent));
+          window.location = 'database.html';
+        }
+      }
+    });
   } else if (window.location.href.indexOf('send-message.html') > -1) {
     document.getElementById("show-message").style.display = 'block';
   } else if (window.location.href.indexOf('inbox.html') > -1) {
