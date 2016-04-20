@@ -84,11 +84,34 @@ window.onload = function (e) {
     var students = document.getElementsByClassName("student-name");
     for (var j = 0; j < students.length; j++) {
       students[j].addEventListener('click', function (e) {
-        var parent = this.parentElement;
-        if (document.getElementById("student-preview").style.display != 'flex') {
-          document.getElementById("student-preview").style.display = 'flex';
+        var studentIndex = localStorage.getItem("studentIndex");
+        for (var i = 1; i <= studentIndex; i++) {
+          var currStudent = JSON.parse(localStorage.getItem("student"+i));
+          if (this.innerText == currStudent["name"]) {
+            var bottomPosition = this.getBoundingClientRect().bottom;
+            var studentPreview = document.getElementById("student-preview");
+            studentPreview.style.top = bottomPosition+'px';
+            var urgency = document.getElementById("urgency-select");
+            for (var x = 0; x < urgency.length; x++) {
+              if (urgency[x].id == currStudent["urgency"]) {
+                urgency.value = urgency[x].text;
+              }
+            }
+            studentPreview.getElementsByClassName("urgency")[0].className = 'urgency ' + currStudent["urgency"];
+            document.getElementById("preview-name").value = currStudent["name"];
+            document.getElementById("preview-idnum").value = currStudent["id-number"];
+            document.getElementById("preview-yrcourse").value = currStudent["year-course"];
+            document.getElementById("preview-cellno").value = currStudent["cell-num"];
+            document.getElementById("preview-dob").value = currStudent["birthday"];
+            document.getElementById("preview-email").value = currStudent["email"];
+          }
+          
+        }
+
+        if (studentPreview.style.display != 'flex') {
+          studentPreview.style.display = 'flex';
         } else {
-          document.getElementById("student-preview").style.display = 'none';
+          studentPreview.style.display = 'none';
         }
           
       });
