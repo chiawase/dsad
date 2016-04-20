@@ -43,6 +43,14 @@ window.onload = function (e) {
       } else {
         studentRemarks.appendChild(document.createTextNode(""));
       }
+
+      // add input field
+      var inputRemarks = document.createElement("input");
+      inputRemarks.type = 'text';
+      inputRemarks.disabled = 'true';
+      inputRemarks.className = 'remarks-text';
+      studentRemarks.appendChild(inputRemarks);
+
       // add edit button
       var editButton = document.createElement("a");
       editButton.className = 'button edit-remarks';
@@ -121,9 +129,14 @@ window.onload = function (e) {
         if (studentPreview.style.display != 'flex') {
           studentPreview.style.display = 'flex';
           this.nextSibling.nextSibling.nextSibling.children[0].style.display = 'block';
+          this.nextSibling.nextSibling.nextSibling.children[0].removeAttribute('disabled');
+          this.nextSibling.nextSibling.nextSibling.children[0].autofocus = 'true';
+          this.nextSibling.nextSibling.nextSibling.children[1].style.display = 'block';
         } else {
           studentPreview.style.display = 'none';
+          this.nextSibling.nextSibling.nextSibling.children[0].disabled = 'true';
           this.nextSibling.nextSibling.nextSibling.children[0].style.display = 'none';
+          this.nextSibling.nextSibling.nextSibling.children[1].style.display = 'none';
         }
       });
     }
@@ -151,10 +164,24 @@ window.onload = function (e) {
           currStudent["birthday"] = document.getElementById("preview-dob").value;
           currStudent["email"] = document.getElementById("preview-email").value;
 
+          for (var j = 0; j < document.getElementsByClassName("student-remarks").length; j++) {
+            if (document.getElementById("preview-name").value == currStudent["name"]) {
+              currStudent["remarks"] = document.getElementsByClassName("student-remarks")[j].children[0].value;
+            }
+          }
+
           localStorage.setItem("student"+i, JSON.stringify(currStudent));
-          window.location = 'database.html';
+          break;
         }
       }
+      // window.location = 'database.html';
+      document.getElementById("student-preview").style.display = 'none';
+      document.getElementById("student-preview").style.display = 'none';
+      for (var s = 0; s < document.getElementsByClassName("student-remarks").length; s++) {
+        document.getElementsByClassName("student-remarks")[s].children[0].disabled = 'true';
+        document.getElementsByClassName("student-remarks")[s].children[1].style.display = 'none';
+      }
+        
     });
   } else if (window.location.href.indexOf('send-message.html') > -1) {
     document.getElementById("show-message").style.display = 'block';

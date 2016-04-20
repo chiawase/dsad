@@ -435,7 +435,7 @@ h1, h2, h3, h4, h5, h6 {
           color: #5a5050;
         }
 
-          .labeled-field input,
+          input,
           .labeled-field select {
             width: 50%;
             margin: 0 auto;
@@ -464,6 +464,6 @@ h1, h2, h3, h4, h5, h6 {
           text-align: center;
           position: absolute;
           right: 0;
-          top: 0.5em;
+          top: 1.4em;
           display: none;
         }
