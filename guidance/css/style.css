@@ -370,6 +370,11 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 2px solid #5a5050;
   }
 
+    #student-preview p {
+      margin: 0.5em 1.9em;
+      line-height: 120%;
+    }
+
     #student-sidebar {
       display: flex;
       width: 20%;
