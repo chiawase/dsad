@@ -48,7 +48,6 @@ window.onload = function (e) {
       } else {
         inputRemarks.value = "";
       }
-
       studentRemarks.appendChild(inputRemarks);
 
       // add edit button
@@ -261,6 +260,30 @@ window.onload = function (e) {
         emailForm.children[2].value = 'iamhamilton@dsad.ph (you)';
         emailForm.children[3].innerText = emailPreview;
       });
+    }
+  } else if (window.location.href.indexOf('appointments.html') > -1) {
+    var days = document.getElementsByClassName("fc-day");
+    for (var i = 0; i < days.length; i++) {
+      var addButton = document.createElement("a");
+      addButton.href = '#';
+      addButton.className = 'button add-event';
+      addButton.innerHTML = '<i class="fa fa-plus"></i>';
+      days[i].appendChild(addButton);
+    }
+
+    var buttons = document.getElementsByClassName("fc-button");
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].addEventListener('click', function (e) {
+        var days = document.getElementsByClassName("fc-day");
+        for (var i = 0; i < days.length; i++) {
+          var addButton = document.createElement("a");
+          addButton.href = '#';
+          addButton.className = 'button add-event';
+          addButton.innerHTML = '<i class="fa fa-plus"></i>';
+          days[i].appendChild(addButton);
+        }
+      });
+      
     }
   }
 }
