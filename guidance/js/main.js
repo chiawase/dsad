@@ -192,13 +192,6 @@ window.onload = function (e) {
       }
     });
 
-    var editRemarkButtons = document.getElementsByClassName("edit-remarks");
-    for (var r = 0; r < editRemarkButtons.length; r++) {
-      editRemarkButtons[r].addEventListener('click', function (e) {
-        editRemarkButtons.contentEditable = true;
-      });
-    }
-
     document.getElementById("save-personal-data").addEventListener('click', function (e) {
       e.preventDefault();
       var currStudent;
@@ -216,7 +209,7 @@ window.onload = function (e) {
           currStudent["email"] = document.getElementById("preview-email").value;
 
           for (var j = 0; j < document.getElementsByClassName("student-remarks").length; j++) {
-            if (document.getElementById("preview-name").value == currStudent["name"]) {
+            if (document.getElementsByClassName("student-name")[j].innerText == currStudent["name"]) {
               currStudent["remarks"] = document.getElementsByClassName("student-remarks")[j].children[0].value;
             }
           }
@@ -285,5 +278,10 @@ window.onload = function (e) {
       });
       
     }
+
+    var addEvent = document.getElementsByClassName("add-event");
+    addEvent.addEventListener('click', function (e) {
+
+    });
   }
 }
