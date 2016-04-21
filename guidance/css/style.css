@@ -414,7 +414,14 @@ h1, h2, h3, h4, h5, h6 {
           #sessions .session.selected > .fa {
             color: #43aca7;
           }
-
+    #session-info {
+      background-color: #fff;
+      width: 80%;
+      display: block;
+      padding: 1em;
+      display: none;
+    }
+    
     #student-area {
       background-color: #fff;
       width: 80%;

@@ -141,6 +141,58 @@ window.onload = function (e) {
       });
     }
 
+    var previewSidebar = document.getElementById("student-sidebar");
+    var selectedIndex = 1;
+    previewSidebar.addEventListener('click', function (e) {
+      var selected = document.getElementsByClassName("selected")[0];
+      switch (e.target.id) {
+        case "up-sidebar":
+          var newSelect = selected.previousElementSibling;
+          newSelect.className = 'session selected';
+          selected.className = 'session';
+          if (newSelect.id.indexOf("session-") > -1) {
+            selectedIndex = newSelect.id.substr(newSelect.id.length - 1);
+            document.getElementById("session-info").style.display = 'block';
+            document.getElementById("student-area").style.display = 'none';
+          } else {
+            selectedIndex = 0;
+            document.getElementById("student-area").style.display = 'flex';
+            document.getElementById("session-info").style.display = 'none';
+          }
+          break;
+        case "down-sidebar":
+          var newSelect = selected.nextElementSibling;
+          newSelect.className = 'session selected';
+          selected.className = 'session';
+          if (newSelect.id.indexOf("session-") > -1) {
+            selectedIndex = newSelect.id.substr(newSelect.id.length - 1);
+            document.getElementById("session-info").style.display = 'block';
+            document.getElementById("student-area").style.display = 'none';
+          } else {
+            selectedIndex = 0;
+            document.getElementById("student-area").style.display = 'flex';
+            document.getElementById("session-info").style.display = 'none';
+          }
+          break;
+        case "personal-data":
+          selected.className = 'session';
+          document.getElementById("personal-data").className = 'session selected';
+          document.getElementById("student-area").style.display = 'flex';
+          document.getElementById("session-info").style.display = 'none';
+          break;
+        default:
+          if (e.target.id.indexOf("session-") > -1) {
+            var newSelect = document.getElementById("session-"+selectedIndex);
+            newSelect.className = 'session selected';
+            selected.className = 'session';
+            document.getElementById("session-info").style.display = 'block';
+            document.getElementById("student-area").style.display = 'none';
+          }
+          console.log(document.getElementById("student-area").style.display == 'flex')
+          break;
+      }
+    });
+
     var editRemarkButtons = document.getElementsByClassName("edit-remarks");
     for (var r = 0; r < editRemarkButtons.length; r++) {
       editRemarkButtons[r].addEventListener('click', function (e) {
